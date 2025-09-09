@@ -1,13 +1,12 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-    plugins: [
-        laravel({
-            input: 'resources/js/app.jsx',
-            refresh: true,
-        }),
-        react(),
-    ],
-});
+  plugins: [react()],
+  preview: {
+    host: '0.0.0.0',
+    port: process.env.PORT || 4173,
+    strictPort: true,
+    allowedHosts: ['npontu-team-pulse.onrender.com'] // Add your Render domain here
+  }
+})
